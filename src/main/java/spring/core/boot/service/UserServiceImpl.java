@@ -17,16 +17,8 @@ public class UserServiceImpl implements IUserService {
 
 	@Override
 	public int saveUser(User user) {
-		if(userRepo.findByEmployeeID(user.getEmployeeID()).isPresent()){
-			Optional<User> availuser=userRepo.findById(user.getUserID());
-			availuser.get().setFirstName(user.getFirstName());
-			availuser.get().setLastName(user.getLastName());
-			User isUserSaved=userRepo.save(availuser.get());
-			return isUserSaved.getUserID();
-		}else {
 		User isUserSaved=userRepo.save(user);
 		return isUserSaved.getUserID();
-	}
 	}
 
 	@Override
@@ -47,11 +39,6 @@ public class UserServiceImpl implements IUserService {
 			userRepo.deleteById(userID);
 			isDeleted=true;
 		}return isDeleted;
-	}
-
-	@Override
-	public Optional<User> getUserByEmployeeId(long empId) {
-		return userRepo.findByEmployeeID(empId);
 	}
 
 }

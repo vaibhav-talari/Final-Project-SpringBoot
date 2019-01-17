@@ -41,9 +41,4 @@ public class ParentTaskServiceImpl implements IParentTaskService{
 		}return isDeleted;
 	}
 
-	@Override
-	public Optional<ParentTask> getParentTaskByName(String taskName) {
-		return parentTaskRepo.findByParentTaskName(taskName);
-	}
-
 }

@@ -10,6 +10,4 @@ public interface IUserService {
 	public Optional<User> getUser(int userID);
 	public List<User> getAllUsers();
 	public boolean deleteUser(int userID);
-	
-	public Optional<User> getUserByEmployeeId(long empId);
-}
+	}

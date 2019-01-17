@@ -11,7 +11,4 @@ public interface IParentTaskService {
 	public Optional<ParentTask> getParentTask(int parentTaskID);
 	public List<ParentTask> getAllParentTasks();
 	public boolean deleteParentTask(int parentTaskID);
-	
-	public Optional<ParentTask> getParentTaskByName(String taskName);
-
-}
+	}

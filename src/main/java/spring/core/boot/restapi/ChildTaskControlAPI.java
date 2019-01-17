@@ -85,6 +85,7 @@ public class ChildTaskControlAPI {
 			oldChildTask.get().setTaskEndDate(newChildTask.getTaskEndDate());
 			oldChildTask.get().setTaskPriority(newChildTask.getTaskPriority());
 			oldChildTask.get().setTaskStatus(newChildTask.isTaskStatus());
+			oldChildTask.get().setParent(newChildTask.getParent());
 			
 			childTaskService.saveChildTask(oldChildTask.get());
 			response = new ResponseEntity<>(oldChildTask.get(),HttpStatus.ACCEPTED);
